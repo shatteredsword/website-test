@@ -24,7 +24,9 @@ RUN . /etc/os-release \
 # [Optional] Uncomment if you want to install more global node modules
 
 # RUN su node -c "npm install -g <your-package-list-here>"
-RUN su node -c "npm install mongodb"
-RUN su node -c "npm install express"
-RUN su node -c "npm install -g -D typescript"
-RUN su node -c "npm install -g -D jest"
+RUN su node -c "npm install -g yarn"
+RUN su node -c "yarn add mongodb"
+RUN su node -c "yarn add express"
+RUN su node -c "yarn add --dev typescript"
+RUN su node -c "yarn add --dev eslint"
+RUN su node -c "yarn add --dev jest"
