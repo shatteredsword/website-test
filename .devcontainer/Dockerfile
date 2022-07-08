@@ -25,8 +25,3 @@ RUN . /etc/os-release \
 
 # RUN su node -c "npm install -g <your-package-list-here>"
 RUN su node -c "npm install -g yarn"
-RUN su node -c "yarn add mongodb"
-RUN su node -c "yarn add express"
-RUN su node -c "yarn add typescript --dev"
-RUN su node -c "yarn add eslint --dev"
-RUN su node -c "yarn add jest --dev
