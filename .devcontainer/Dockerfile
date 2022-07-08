@@ -26,3 +26,4 @@ RUN . /etc/os-release \
 # RUN su node -c "npm install -g <your-package-list-here>"
 RUN su node -c "npm install -g -D typescript"
 RUN su node -c "npm install -g mongodb"
+RUN su node -c "npm install -g express"
