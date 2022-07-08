@@ -24,7 +24,7 @@ RUN . /etc/os-release \
 # [Optional] Uncomment if you want to install more global node modules
 
 # RUN su node -c "npm install -g <your-package-list-here>"
-RUN su node -c "npm install -g mongodb"
-RUN su node -c "npm install -g express"
+RUN su node -c "npm install mongodb"
+RUN su node -c "npm install express"
 RUN su node -c "npm install -g -D typescript"
 RUN su node -c "npm install -g -D jest"
