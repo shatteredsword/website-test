@@ -1,12 +1,16 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the READMEs at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/javascript-node-mongo
-// and https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/typescript-node
-// Update the VARIANT arg in docker-compose.yml to pick a Node.js version
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/typescript-node
 {
-	"name": "Node.js & TypeScript & Mongo DB",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspace",
+	"name": "Node.js & TypeScript",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local on arm64/Apple Silicon.
+		"args": { 
+			"VARIANT": "18"
+		}
+	},
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -14,19 +18,20 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint",
-				"mongodb.mongodb-vscode" 
+				"dbaeumer.vscode-eslint"
 			]
 		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [3000, 27017],
-	"forwardPorts": [3000, 27017],
+	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node"
+	"remoteUser": "node",
+	"features": {
+		"git": "os-provided"
+	}
 }
