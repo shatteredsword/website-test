@@ -1,4 +1,7 @@
 {
+  "author": "Sean Mayo",
+  "name": "website-test",
+  "license": "MIT",
   "dependencies": {
     "mongodb": "^4.8.0"
   }
